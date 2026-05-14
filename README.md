@@ -1,42 +1,65 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/9FIzUWwz)
+# Book Recommender System
 
-# MLU Final Project: Book Recommender System
+A hybrid book recommendation engine combining **collaborative filtering** via matrix factorization with **semantic search** via sentence embeddings. Trained on Amazon book review data and deployed as an interactive web app.
 
-**Course:** Mathematical Fundamentals for Machine Learning — City Colleges of Chicago
+**Live demo:** [recommender-system-book.streamlit.app](https://recommender-system-book.streamlit.app)
 
-## Overview
+---
 
-Builds a book recommender system from scratch using Amazon book review data (~1,490 users, ~1,186 books, ratings 1–5). The technique is **model-based collaborative filtering** via matrix factorization.
+## How It Works
 
-## Approach
+### Collaborative Filtering
+The rating matrix is factorized as:
 
-The rating matrix is factorized as **P = A × F**, where:
-- **A** (n × k): user affinities for k latent factors
-- **F** (k × m): book features for k latent factors
-- **P** (n × m): predicted ratings for all user–book pairs
+**P = μ + b_u + b_i + A × F**
 
-Parameters are learned by minimizing MSE (equivalent to maximizing Gaussian likelihood) via **gradient descent with PyTorch autograd**.
-
-## Notebooks
-
-| File | Description |
+| Term | Description |
 |------|-------------|
-| `math-lab-final_project.ipynb` | Main notebook — data loading, vectorization, model training, evaluation |
+| μ | Global mean rating |
+| b_u | User bias vector |
+| b_i | Item bias vector |
+| A (n × k) | User latent factor matrix |
+| F (k × m) | Item latent factor matrix |
 
-## Submissions
+Parameters are learned by minimizing masked MSE with L2 regularization via full-batch gradient descent with early stopping.
 
-| File | Description |
-|------|-------------|
-| `baseline_submission.csv` | Rank-1 baseline (ASIN average ratings) |
-| `gd_submission.csv` | Gradient descent model (k=2, 500 steps) |
-| `early_stopping_submission.csv` | GD with early stopping |
-| `MATH_Final_Project_LB_submission.csv` | Best improved model (k=15, L2 reg, clamped [1,5]) |
+### Semantic Search
+Book descriptions are encoded using `sentence-transformers` (`all-MiniLM-L6-v2`). At query time, cosine similarity between the query embedding and all book embeddings ranks results by semantic relevance.
 
-## Key Concepts Covered
+---
 
-- Sparse matrix construction (score matrix S, mask matrix R)
-- Matrix factorization and latent factors
-- Maximum likelihood estimation → MSE loss
-- Gradient descent with autograd
-- Overfitting detection and early stopping
-- L2 regularization
+## Dataset
+
+- **1,490** users · **1,186** books · **61,104** ratings
+- Rating scale: 1–5
+- Sparsity: 96.5%
+- Source: Amazon book reviews
+
+---
+
+## Stack
+
+- **PyTorch** — model training
+- **sentence-transformers** — semantic embeddings
+- **Streamlit** — web interface
+- **Open Library API** — book metadata and covers
+- **pandas / numpy** — data processing
+
+---
+
+## Results
+
+| Model | Val RMSE |
+|-------|----------|
+| Global mean baseline | ~1.50 |
+| Matrix factorization (no bias) | 3.13 |
+| Matrix factorization + bias | **1.87** |
+
+---
+
+## Running Locally
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
