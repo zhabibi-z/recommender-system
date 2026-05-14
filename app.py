@@ -32,8 +32,6 @@ def load_data():
         for _, row in meta_df.iterrows():
             asin = row["asin"]
             cover_url = row["cover_url"]
-            if not cover_url and not asin.startswith("B"):
-                cover_url = f"https://covers.openlibrary.org/b/isbn/{asin}-M.jpg"
             metadata[asin] = {
                 "title": row["title"],
                 "author": row["author"],
