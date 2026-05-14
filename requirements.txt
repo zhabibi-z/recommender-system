@@ -5,3 +5,5 @@ scikit-learn
 torch
 ipython
 jupyter
+streamlit>=1.28.0
+sentence-transformers
