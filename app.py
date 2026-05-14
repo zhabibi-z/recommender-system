@@ -21,8 +21,8 @@ st.markdown("Hybrid recommendations powered by **matrix factorization** and **se
 
 @st.cache_data
 def load_data():
-    training = pd.read_csv("MATH_Final_Project_Data_training.csv")
-    test_features = pd.read_csv("MATH_Final_Project_Data_test_features.csv")
+    training = pd.read_csv("training.csv")
+    test_features = pd.read_csv("test_features.csv")
     unique_users = sorted(training["User"].unique().tolist())
     unique_asins = sorted(training["ASIN"].unique().tolist())
 
