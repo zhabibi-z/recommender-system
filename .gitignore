@@ -16,3 +16,17 @@ __pycache__/
 .venv/
 env/
 .claude/
+
+# Large data files — regenerate via run_pipeline.py
+data/raw/
+data/processed/
+
+# Model weights — regenerate via pretrain_model.py
+models/
+
+# Legacy pipeline artifacts
+.fetch_progress.json
+fetch_log.txt
+
+# Pytest
+.pytest_cache/
