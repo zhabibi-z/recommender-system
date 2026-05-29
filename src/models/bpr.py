@@ -174,9 +174,10 @@ def save(model: BPRModel, path: Path, metadata: dict | None = None) -> None:
     log.info("Model saved → %s", path)
 
 
-def load(path: Path) -> BPRModel:
+def load(path: Path) -> tuple[BPRModel, dict]:
+    """Return (model, ckpt_dict) so callers can inspect metadata."""
     ckpt = torch.load(Path(path), map_location="cpu", weights_only=False)
     model = BPRModel(ckpt["n_users"], ckpt["n_items"], ckpt["k"])
     model.load_state_dict(ckpt["state_dict"])
     model.eval()
-    return model
+    return model, ckpt
