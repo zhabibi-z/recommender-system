@@ -22,7 +22,6 @@ data/raw/
 data/processed/
 
 # Model weights — regenerate via pretrain_model.py
-models/
 
 # Legacy pipeline artifacts
 .fetch_progress.json
