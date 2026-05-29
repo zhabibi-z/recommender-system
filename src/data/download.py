@@ -7,7 +7,6 @@ Only the sampled rows are written to disk; re-running is a no-op if cache exists
 """
 import json
 import logging
-from pathlib import Path
 
 import pandas as pd
 from huggingface_hub import HfFileSystem

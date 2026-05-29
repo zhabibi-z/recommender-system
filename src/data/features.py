@@ -7,7 +7,6 @@ Item features: mean_rating, rating_count, rating_std, description_len,
 """
 import logging
 
-import numpy as np
 import pandas as pd
 
 from src.config import cfg

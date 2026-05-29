@@ -77,8 +77,6 @@ def load_data() -> dict:
         }
 
     # ── Legacy fallback ────────────────────────────────────────────────────────
-    from sklearn.model_selection import train_test_split
-
     training      = pd.read_csv("data/legacy/training.csv")
     unique_users  = sorted(training["User"].unique().tolist())
     unique_asins  = sorted(training["ASIN"].unique().tolist())
@@ -156,7 +154,8 @@ def load_embeddings():
 
 @st.cache_resource(show_spinner=False)
 def load_encoder():
-    import io, sys
+    import io
+    import sys
     from sentence_transformers import SentenceTransformer
     old_err, sys.stderr = sys.stderr, io.StringIO()
     try:
