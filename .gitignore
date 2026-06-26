@@ -20,6 +20,7 @@ env/
 # Large data files — regenerate via run_pipeline.py
 data/raw/
 data/processed/
+data/embeddings/
 
 # Model weights — regenerate via pretrain_model.py
 
