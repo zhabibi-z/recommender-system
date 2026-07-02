@@ -9,7 +9,7 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-app-red.svg)](https://recommender-system-book.streamlit.app)
 [![Tests](https://img.shields.io/badge/tests-15%20passed-brightgreen.svg)](#testing)
 
-**[Live Demo](https://recommender-system-book.streamlit.app)**
+**[Live Demo] : (https://recommender-system-book.streamlit.app)**
 
 ---
 
