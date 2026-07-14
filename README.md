@@ -2,7 +2,7 @@
 
 > A production-ready hybrid recommender engine combining **Bayesian Personalized Ranking**
 > with **semantic search** — built on 500K+ Amazon book reviews with a clean,
-> end-to-end ML pipeline.
+> end-to-end ML pipeline
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-orange.svg)](https://pytorch.org/)
