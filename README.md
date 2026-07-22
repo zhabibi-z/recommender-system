@@ -1,8 +1,9 @@
 # Book Recommender System
 
 > A production-ready hybrid recommender engine combining **Bayesian Personalized Ranking**
-> with **semantic search** — built on 500K+ Amazon book reviews with a clean
-> end-to-end ML pipeline
+> with **semantic search** — built on Amazon book-review data with a clean
+> end-to-end ML pipeline. *(The deployed demo runs on a committed legacy subset;
+> the full pipeline streams the larger Amazon Reviews 2023 corpus.)*
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-orange.svg)](https://pytorch.org/)
@@ -126,8 +127,7 @@ question for a recommender system.
 │   │   ├── clean.py            dedup, k-core filter, temporal split
 │   │   └── features.py         user & item feature engineering
 │   ├── models/
-│   │   ├── bpr.py              Bayesian Personalized Ranking (PyTorch)
-│   │   └── matrix_factorization.py  improved biased MF (baseline)
+│   │   └── bpr.py              Bayesian Personalized Ranking (PyTorch)
 │   └── utils/
 │       └── metrics.py          RMSE, MAE, Precision@K, Recall@K, NDCG@K
 │

@@ -20,7 +20,10 @@ env/
 # Large data files — regenerate via run_pipeline.py
 data/raw/
 data/processed/
-data/embeddings/
+# Embedding artifacts are ignored EXCEPT the small committed ones the deployed demo needs.
+data/embeddings/*
+!data/embeddings/book_embeddings.npy
+!data/embeddings/book_embeddings_index.csv
 
 # Model weights — regenerate via pretrain_model.py
 

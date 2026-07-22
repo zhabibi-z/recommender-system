@@ -249,7 +249,7 @@ with st.sidebar:
     st.header("Settings")
 
     if model_state is None:
-        st.error("No model found. Run: `python pretrain_model.py`")
+        st.error("No model found. Run: `python scripts/pretrain_model.py`")
     elif model_state["type"] == "bpr":
         st.success("BPR model loaded", icon="⚡")
         ckpt = model_state["ckpt"]
@@ -323,7 +323,7 @@ with tab2:
     st.caption("Describe what you're looking for — the model finds semantically similar books.")
 
     if embeddings is None:
-        st.error("Embeddings not found. Run: `python generate_embeddings.py`")
+        st.error("Embeddings not found. Run: `python scripts/generate_embeddings.py`")
     else:
         query = st.text_input("", placeholder="e.g. dark romance with a strong female lead", key="sem_q")
         if query:
@@ -341,7 +341,7 @@ with tab3:
     st.caption("Blends your taste profile (CF) with description matching (semantic).")
 
     if embeddings is None:
-        st.error("Embeddings not found. Run: `python generate_embeddings.py`")
+        st.error("Embeddings not found. Run: `python scripts/generate_embeddings.py`")
     else:
         col_a, col_b = st.columns(2)
         with col_a:
