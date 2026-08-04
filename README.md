@@ -20,7 +20,7 @@ Finding your next book is harder than it should be. Bestseller lists show you th
 100 titles. Search requires you to know what you're looking for. Neither approach
 understands *your* taste.
 
-This project builds a system that does three things:
+This project builds a system that does three things:-
 1. **Learns your preferences** from your reading history (collaborative filtering)
 2. **Understands book descriptions** semantically (dense embeddings)
 3. **Blends both signals** into a single ranked list you can tune in real-time
