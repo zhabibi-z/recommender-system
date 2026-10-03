@@ -26,7 +26,8 @@ data/embeddings/*
 !data/embeddings/book_embeddings_index.csv
 
 # Model weights — regenerate via pretrain_model.py
-
+models/*.pt
+models/*.pth
 # Legacy pipeline artifacts
 .fetch_progress.json
 fetch_log.txt
