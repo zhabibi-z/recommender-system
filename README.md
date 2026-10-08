@@ -1,5 +1,9 @@
 # Book Recommender System
 
+<a href="https://recommender-system-book.streamlit.app/"><img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg" alt="Open in Streamlit" height="48"></a>
+
+### ▶ Try the live app: [recommender-system-book.streamlit.app](https://recommender-system-book.streamlit.app/)
+
 > A production-ready hybrid recommender engine combining **Bayesian Personalized Ranking**
 > with **semantic search** — built on Amazon book-review data with a clean
 > end-to-end ML pipeline. *(The deployed demo runs on a committed legacy subset;
@@ -9,8 +13,6 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-orange.svg)](https://pytorch.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-app-red.svg)](https://recommender-system-book.streamlit.app)
 [![Tests](https://img.shields.io/badge/tests-15%20passed-brightgreen.svg)](#testing)
-
-**[Live Demo] : (https://recommender-system-book.streamlit.app)**
 
 ---
 
